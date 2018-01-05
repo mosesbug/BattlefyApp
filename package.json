@@ -10,7 +10,7 @@
     },
     "main": "main",
     "dependencies": {
-        "browserfy": "15.0.0",
+        
         "live-server": "1.2.0",
         "request": "2.83.0"
     }
