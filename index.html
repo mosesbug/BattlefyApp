@@ -36,10 +36,16 @@
 
       <!-- This is for the match history-->
       <div class="row">
-       <div class="col-lg-12">
-         <div id="matchHistory">
-         </div>
-       </div>
+        <h2> Match History:</h2>
+        <template>
+      		{{#each m in returnMatches}}
+      		  <div class="jumbotron">
+
+            </div>
+      		{{/each}}
+      	</template>
+
+      </div>
      </div>
 
     <!-- Implemented jQuery -->
@@ -49,6 +55,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="main.js"></script>
+    <script src="bundle.js"></script>
 
   </body>
 </html>

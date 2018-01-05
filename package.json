@@ -1,0 +1,17 @@
+{
+    "name": "BattlefyApp",
+    "version": "0.1.0",
+    "description": "League of Legends Summoner Match History for Battlefy",
+    "author": "Moses Bug <mbug@brandeis.edu>",
+    "homepage": "https://github.com/mosesbug/BattlefyApp",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mosesbug/BattlefyApp.git"
+    },
+    "main": "main",
+    "dependencies": {
+        "browserfy": "15.0.0",
+        "live-server": "1.2.0",
+        "request": "2.83.0"
+    }
+}

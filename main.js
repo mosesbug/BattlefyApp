@@ -30,16 +30,46 @@ Data I need for each game:
   - cs per min --> gameDuration returns the seconds of a game --> cs/(gameDuration/60)
 */
 
+// A new request module (browser's dont have require() but Node.js, need to get around this problem) FIXME
+const request = require('request');
 
+// The api key is globally accessible in this file
+var RIOT_API_KEY = "";
+
+// This is will be an array containing the summoner's last 20 matches
+var matches = Array(20);
+
+returnMatches = function() {
+  return matches;
+}
+
+// Executed when the submit button is clickec
 function submitName() {
   var name = document.getElementById('js-name').value;
-  var apiKey = document.getElementById('js-api-key').value;
+  RIOT_API_KEY = document.getElementById('js-api-key').value;
   var region = document.getElementById('js-region').value;
 
-  if (name == "" || apiKey == "") {
+  if (name == "" || RIOT_API_KEY == "") {
     window.alert("Name and/or api key field is empty!")
     return;
   }
+
+  var baseUrl = 'https://' + region + '.api.riotgames.com/lol/';
+
+  // This is json object returned by /lol/summoner/v3/summoners/by-name/{summonerName}
+  var summonerJson = "";
+  var success = false;
+
+  request(baseUrl + 'summoner/v3/summoners/by-name/' + name + '?api_key=' + RIOT_API_KEY, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
+      // Clean api call
+      summonerJson = body;
+      success = true;
+    } else {
+      summonerJson = 'Something went wrong!';
+    }
+  });
+
 
 
 }
