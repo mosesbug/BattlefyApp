@@ -27,7 +27,7 @@ Data I need for each game:
   - cs --> summoner name --API call--> accountId --API call--> matchId --> get
     MatchDto json object --> matchDto.participantIdentities[search the list for the correct
     accountId].participantId --> matchDto.participants[participantId].stats.totalMinionsKilled
-  - cs per min --> gameDuration returns the seconds of a game --> cs/(gameDuration/60) 
+  - cs per min --> gameDuration returns the seconds of a game --> cs/(gameDuration/60)
 */
 
 
@@ -43,5 +43,3 @@ function submitName() {
 
 
 }
-
-function get
